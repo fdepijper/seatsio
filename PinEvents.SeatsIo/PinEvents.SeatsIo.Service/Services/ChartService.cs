@@ -1,6 +1,7 @@
-﻿namespace pinevents.SeatsIo.Service
+﻿namespace PinEvents.SeatsIo.Service
 {
     using Newtonsoft.Json.Linq;
+    using PinEvents.SeatsIo;
     using PinEvents.SeatsIo.Data;
     using System;
     using System.Collections.Generic;
@@ -128,7 +129,7 @@
             Connect connect = new Connect();
 
             var jdata = JObject.FromObject(new { secretKey = secretKey, chartKey = chartKey, chartName = String.Format("Copy of {0}", chartName) });
-            connect.Request(Connect.Methods.POST, endPoint, jdata);
+            connect.Request(Connect.Methods.POST, endPoint, jdata, true);
 
             var result = connect.Data;
             return result;

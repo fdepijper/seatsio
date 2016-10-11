@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>PinEvents.SeatsIo.Service</id>
+    <version>1.0.0.3</version>
+    <title>Seats.IO Service</title>
+    <authors>WIM4you</authors>
+    <owners>WIM4you</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/fdepijper/seatsio</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>.NET Seat IO Service module for https://app.seats.io</description>
+    <releaseNotes>Release 1</releaseNotes>
+    <copyright>Copyright WIM4you 2016</copyright>
+    <tags>seats.io, api, json</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="9.0.1" />
+      <dependency id="EntityFramework" version="4.5.1" />
+    </dependencies>
+  </metadata>
+</package>

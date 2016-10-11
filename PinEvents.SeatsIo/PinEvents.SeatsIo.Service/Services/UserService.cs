@@ -1,6 +1,7 @@
-﻿namespace pinevents.SeatsIo.Service
+﻿namespace PinEvents.SeatsIo.Service
 {
     using Newtonsoft.Json.Linq;
+    using PinEvents.SeatsIo;
     using PinEvents.SeatsIo.Data;
     using System.Web.Script.Serialization;
 

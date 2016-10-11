@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0-*",
+  "description": "PinEvents.SeatsIo.Service Class Library",
+  "authors": [ "wim4you" ],
+  "tags": [ "seats.io" ],
+  "projectUrl": "https://github.com/fdepijper/seatsio",
+  "licenseUrl": "",
+  "frameworks": {
+    "net451": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+        "System.Net.Http": "4.0.0.0",
+        "System.Net.Http.WebRequest": "4.0.0.0",
+        "System.Runtime.Serialization": "4.0.0.0",
+        "System.Web.Extensions": "4.0.0.0"
+      }
+    }
+  },
+  "dependencies": {
+    "Newtonsoft.Json": "9.0.1"
+  }
+}

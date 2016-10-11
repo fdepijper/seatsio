@@ -3,27 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinEvents.SeatsIo.Service", "PinEvents.SeatsIo.Service\PinEvents.SeatsIo.Service.csproj", "{CA39E286-90FF-4077-9E5C-894400B57D01}"
-	ProjectSection(ProjectDependencies) = postProject
-		{94C2972E-67F7-4BE8-8387-EF2D926A2CEE} = {94C2972E-67F7-4BE8-8387-EF2D926A2CEE}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinEvents.SeatsIo.Data", "PinEvents.SeatsIo.Data\PinEvents.SeatsIo.Data.csproj", "{94C2972E-67F7-4BE8-8387-EF2D926A2CEE}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PinEvents.SeatsIo.Service", "PinEvents.SeatsIo.Service\PinEvents.SeatsIo.Service.xproj", "{9B2F9D9D-E419-4C73-843F-304AA0A98F41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		net45|Any CPU = net45|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CA39E286-90FF-4077-9E5C-894400B57D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA39E286-90FF-4077-9E5C-894400B57D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA39E286-90FF-4077-9E5C-894400B57D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA39E286-90FF-4077-9E5C-894400B57D01}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94C2972E-67F7-4BE8-8387-EF2D926A2CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94C2972E-67F7-4BE8-8387-EF2D926A2CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94C2972E-67F7-4BE8-8387-EF2D926A2CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94C2972E-67F7-4BE8-8387-EF2D926A2CEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B2F9D9D-E419-4C73-843F-304AA0A98F41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B2F9D9D-E419-4C73-843F-304AA0A98F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B2F9D9D-E419-4C73-843F-304AA0A98F41}.net45|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B2F9D9D-E419-4C73-843F-304AA0A98F41}.net45|Any CPU.Build.0 = Debug|Any CPU
+		{9B2F9D9D-E419-4C73-843F-304AA0A98F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B2F9D9D-E419-4C73-843F-304AA0A98F41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

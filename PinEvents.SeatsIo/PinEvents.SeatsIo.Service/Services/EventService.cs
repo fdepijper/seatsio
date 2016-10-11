@@ -1,7 +1,8 @@
 ﻿
-namespace pinevents.SeatsIo.Service
+namespace PinEvents.SeatsIo.Service
 {
     using Newtonsoft.Json.Linq;
+    using PinEvents.SeatsIo;
     using PinEvents.SeatsIo.Data;
     using PinEvents.SeatsIo.Exceptions;
     using System.Collections.Generic;

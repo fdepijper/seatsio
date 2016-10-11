@@ -1,10 +1,13 @@
-﻿namespace pinevents.SeatsIo.Service
+﻿namespace PinEvents.SeatsIo.Service
 {
     using Newtonsoft.Json.Linq;
+    using PinEvents.SeatsIo;
     using PinEvents.SeatsIo.Data;
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Web.Script.Serialization;
+
     public class BookingService
     {
         private string endPoint;
@@ -12,64 +15,101 @@
 
         /// <summary>
         /// POST https://app.seats.io/api/book
+        /// http://www.seats.io/docs/api#api-reference-booking-and-releasing-objects-booking-seats-tables-or-booths
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Success</returns>
         public bool Book(BookingData booking)
         {
-            Connect connect = new Connect();
-            endPoint = "api/book";
-            var jdata = JObject.FromObject(booking);
-            connect.Request(Connect.Methods.POST, endPoint, jdata);
+            try
+            {
+                Connect connect = new Connect();
+                endPoint = "api/book";
+                var jdata = JObject.FromObject(booking);
+                connect.Request(Connect.Methods.POST, endPoint, jdata);
 
-            return true;
+                return true;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
         }
 
         /// <summary>
         /// POST https://app.seats.io/api/release
+        /// http://www.seats.io/docs/api#api-reference-booking-and-releasing-objects-releasing-seats-tables-or-booths
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Success</returns>
         public bool Release(BookingData booking)
         {
-            Connect connect = new Connect();
-            endPoint = "api/release";
-            var jdata = JObject.FromObject(booking);
-            connect.Request(Connect.Methods.POST, endPoint, jdata);
+            try
+            {
+                Connect connect = new Connect();
+                endPoint = "api/release";
+                var jdata = JObject.FromObject(booking);
+                connect.Request(Connect.Methods.POST, endPoint, jdata);
 
-            return true;
+                return true;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
         }
 
         /// <summary>
         /// POST https://app.seats.io/api/changeStatus
+        /// http://www.seats.io/docs/api#api-reference-booking-and-releasing-objects-changing-status-of-seats-tables-or-booths
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Success</returns>
         public bool ChangeStatus(BookingData booking)
         {
-            Connect connect = new Connect();
-            endPoint = "api/changeStatus";
-            var jdata = JObject.FromObject(booking);
-            connect.Request(Connect.Methods.POST, endPoint, jdata); 
+            try
+            {
+                Connect connect = new Connect();
+                endPoint = "api/changeStatus";
+                var jdata = JObject.FromObject(booking);
+                connect.Request(Connect.Methods.POST, endPoint, jdata);
 
-            return true;
+                return true;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
         }
 
         /// <summary>
         /// POST https://app.seats.io/api/reserve
+        /// http://www.seats.io/docs/api#api-reference-booking-and-releasing-objects-temporarily-reserving-objects
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Success</returns>
         public bool Reserve(BookingData booking)
         {
-            Connect connect = new Connect();
-            endPoint = "api/reserve";
-            var jdata = JObject.FromObject(booking);
-            connect.Request(Connect.Methods.POST, endPoint, jdata);
+            try
+            {
+                Connect connect = new Connect();
+                endPoint = "api/reserve";
+                var jdata = JObject.FromObject(booking);
+                connect.Request(Connect.Methods.POST, endPoint, jdata);
 
-            return true;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
         }
 
         /// <summary>
         /// POST https://app.seats.io/api/reservationToken/<publicKey>/create
+        /// http://www.seats.io/docs/api#api-reference-booking-and-releasing-objects-generating-a-reservation-token
         /// </summary>
-        /// <returns></returns>
+        /// <returns>ReservationToken</returns>
         public string ReservationToken(string publicKey)
         {
             Connect connect = new Connect();
@@ -82,8 +122,9 @@
 
         /// <summary>
         /// GET https://app.seats.io/api/event/{eventKey}/orders/{orderId}/{secretKey}
+        /// http://www.seats.io/docs/api#api-reference-booking-and-releasing-objects-orders
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The Response response will be an array of seat id’s, like this: ["A-3","A-5"]</returns>
         public List<string> Order(BookingData booking)
         {
             Connect connect = new Connect();

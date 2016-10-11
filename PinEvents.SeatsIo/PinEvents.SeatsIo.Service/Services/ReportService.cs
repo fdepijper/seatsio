@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 
-namespace pinevents.SeatsIo.Service
+namespace PinEvents.SeatsIo.Service
 {
     public class ReportService
     {
