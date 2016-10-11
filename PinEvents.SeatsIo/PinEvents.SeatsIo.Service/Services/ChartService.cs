@@ -1,36 +1,49 @@
 ﻿namespace PinEvents.SeatsIo.Service
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Web.Script.Serialization;
+
     using Newtonsoft.Json.Linq;
     using PinEvents.SeatsIo;
     using PinEvents.SeatsIo.Data;
-    using System;
-    using System.Collections.Generic;
-    using System.Web.Script.Serialization;
+    
     using static PinEvents.SeatsIo.Data.ChartData;
 
     public class ChartService
     {
         private string endPoint;
-  
+
         /// <summary>
         /// Get the seatplans list
         /// GET https://app.seats.io/api/charts
+        /// http://www.seats.io/docs/api#api-reference-charts-list-charts-for-a-user
         /// </summary>
         public List<SeatplanData> List(string secretKey)
         {
-            Connect connect = new Connect();
-            endPoint = String.Format("api/charts/{0}", secretKey);
-            connect.Request(Connect.Methods.GET, endPoint, null);
+            try
+            {
+                Connect connect = new Connect();
+                endPoint = String.Format("api/charts/{0}", secretKey);
+                connect.Request(Connect.Methods.GET, endPoint, null);
 
-            var json = connect.Data;
-            var response = new JavaScriptSerializer().Deserialize<List<SeatplanData>>(json);
-            
-            return response;
+                var json = connect.Data;
+                var response = new JavaScriptSerializer().Deserialize<List<SeatplanData>>(json);
+
+                return response;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
         }
 
         /// <summary>
         /// Get the seatplan Details.
         /// GET https://app.seats.io/api/chart/{chartKey}.json
+        /// http://www.seats.io/docs/api#api-reference-charts-chart-details
         /// </summary>
         public ChartDetailData Details(string chartKey)
         {
@@ -47,6 +60,7 @@
         /// <summary>
         /// Get the seatplan for an event.
         /// GET https://app.seats.io/api/chart/<secretKey>/event/<eventKey>
+        /// http://www.seats.io/docs/api#api-reference-charts-fetching-the-chart-linked-to-an-event
         /// </summary>
         public DetailData GetEventChart(string secretKey, string eventKey)
         {
@@ -64,6 +78,7 @@
         /// Create a new chart from an external existing chart.
         /// Only use this if you want to migrate existing charts!
         /// POST https://app.seats.io/api/chart/create
+        /// http://www.seats.io/docs/api#api-reference-charts-create-a-chart
         /// </summary>
         /// <param name="designData"></param>
         public String CreateChart(ChartDesignData designData)
@@ -80,6 +95,7 @@
 
         /// <summary>
         /// https://app.seats.io/api/chart/<chartKey>/thumbnail
+        /// http://www.seats.io/docs/api#api-reference-charts-thumbnails
         /// </summary>
         /// <param name="chartKey"></param>
         /// <returns></returns>
@@ -96,6 +112,7 @@
         /// <summary>
         /// Puts the chart in the archive (no longer visible or active)
         /// https://app.seats.io/api/chart/<secretKey>/<chartKey>/archive
+        /// http://www.seats.io/docs/api#api-reference-charts-archive-a-chart
         /// </summary>
         /// <param name="chartKey"></param>
         /// <returns></returns>
@@ -109,6 +126,7 @@
         /// <summary>
         /// Get the chart from the archive (makes it active)
         /// POST https://app.seats.io/api/chart/<secretKey>/<chartKey>/unarchive
+        /// http://www.seats.io/docs/api#api-reference-charts-unarchive-a-chart
         /// </summary>
         /// <param name="chartKey"></param>
         /// <returns></returns>
@@ -122,6 +140,7 @@
         /// <summary>
         /// Copies the chart and creates a new one with a new chartKey.
         /// POST https://app.seats.io/api/chart/copy
+        /// http://www.seats.io/docs/api#api-reference-charts-copy-a-chart
         /// </summary>
         /// <returns></returns>
         public string Copy(string secretKey, string chartKey, string chartName)
