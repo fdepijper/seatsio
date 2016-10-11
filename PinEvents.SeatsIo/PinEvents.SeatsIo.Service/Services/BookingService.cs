@@ -1,12 +1,13 @@
 ﻿namespace PinEvents.SeatsIo.Service
 {
-    using Newtonsoft.Json.Linq;
-    using PinEvents.SeatsIo;
-    using PinEvents.SeatsIo.Data;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Web.Script.Serialization;
+
+    using Newtonsoft.Json.Linq;
+    using PinEvents.SeatsIo;
+    using PinEvents.SeatsIo.Data;
 
     public class BookingService
     {
@@ -84,7 +85,7 @@
 
         /// <summary>
         /// POST https://app.seats.io/api/reserve
-        /// http://www.seats.io/docs/api#api-reference-booking-and-releasing-objects-temporarily-reserving-objects
+        /// DOC <a href="http://www.seats.io/docs/api#api-reference-booking-and-releasing-objects-temporarily-reserving-objects">Reserve objects</a>
         /// </summary>
         /// <returns>Success</returns>
         public bool Reserve(BookingData booking)

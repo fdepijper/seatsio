@@ -1,14 +1,15 @@
-﻿using Newtonsoft.Json.Linq;
-using PinEvents.SeatsIo.Data;
-using System;
-using System.IO;
-using System.Net;
-using System.Net.Http;
-using System.Reflection;
-using System.Text;
-
-namespace PinEvents.SeatsIo
+﻿namespace PinEvents.SeatsIo
 {
+    using System;
+    using System.IO;
+    using System.Net;
+    using System.Net.Http;
+    using System.Reflection;
+    using System.Text;
+
+    using Newtonsoft.Json.Linq;
+    using PinEvents.SeatsIo.Data;
+
     class Connect
     {
         public string Version;
