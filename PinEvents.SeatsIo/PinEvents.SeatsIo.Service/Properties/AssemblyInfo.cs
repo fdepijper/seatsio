@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SeatsIo.Service")]
+[assembly: AssemblyTitle("PinEvents.SeatsIo.Service")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SeatsIo.Service")]
+[assembly: AssemblyProduct("PinEvents.SeatsIo.Service")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("232ee42a-1ba3-4424-8b3c-e991e72267c8")]
+[assembly: Guid("ca39e286-90ff-4077-9e5c-894400b57d01")]
 
 // Version information for an assembly consists of the following four values:
 //
