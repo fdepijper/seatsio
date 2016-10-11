@@ -11,6 +11,9 @@
     
     using static PinEvents.SeatsIo.Data.ChartData;
 
+    /// <summary>
+    /// Json Chart service API.
+    /// </summary>
     public class ChartService
     {
         private string endPoint;
@@ -18,8 +21,8 @@
         /// <summary>
         /// Get the seatplans list
         /// GET https://app.seats.io/api/charts
-        /// http://www.seats.io/docs/api#api-reference-charts-list-charts-for-a-user
         /// </summary>
+        /// <see cref="http://www.seats.io/docs/api#api-reference-charts-list-charts-for-a-user">List</see>
         public List<SeatplanData> List(string secretKey)
         {
             try
@@ -43,8 +46,8 @@
         /// <summary>
         /// Get the seatplan Details.
         /// GET https://app.seats.io/api/chart/{chartKey}.json
-        /// http://www.seats.io/docs/api#api-reference-charts-chart-details
         /// </summary>
+        /// <see cref="http://www.seats.io/docs/api#api-reference-charts-chart-details"/> 
         public ChartDetailData Details(string chartKey)
         {
             Connect connect = new Connect();
@@ -60,8 +63,8 @@
         /// <summary>
         /// Get the seatplan for an event.
         /// GET https://app.seats.io/api/chart/<secretKey>/event/<eventKey>
-        /// http://www.seats.io/docs/api#api-reference-charts-fetching-the-chart-linked-to-an-event
         /// </summary>
+        /// <see cref="http://www.seats.io/docs/api#api-reference-charts-fetching-the-chart-linked-to-an-event"/>
         public DetailData GetEventChart(string secretKey, string eventKey)
         {
             Connect connect = new Connect();
@@ -78,8 +81,8 @@
         /// Create a new chart from an external existing chart.
         /// Only use this if you want to migrate existing charts!
         /// POST https://app.seats.io/api/chart/create
-        /// http://www.seats.io/docs/api#api-reference-charts-create-a-chart
         /// </summary>
+        /// <see cref="http://www.seats.io/docs/api#api-reference-charts-create-a-chart">Create chart doc</see>
         /// <param name="designData"></param>
         public String CreateChart(ChartDesignData designData)
         {
@@ -95,8 +98,8 @@
 
         /// <summary>
         /// https://app.seats.io/api/chart/<chartKey>/thumbnail
-        /// http://www.seats.io/docs/api#api-reference-charts-thumbnails
         /// </summary>
+        /// <see cref="http://www.seats.io/docs/api#api-reference-charts-thumbnails"/>
         /// <param name="chartKey"></param>
         /// <returns></returns>
         public string ThumbNail(string chartKey)
@@ -112,8 +115,8 @@
         /// <summary>
         /// Puts the chart in the archive (no longer visible or active)
         /// https://app.seats.io/api/chart/<secretKey>/<chartKey>/archive
-        /// http://www.seats.io/docs/api#api-reference-charts-archive-a-chart
         /// </summary>
+        ///<see cref = "http://www.seats.io/docs/api#api-reference-charts-archive-a-chart" />
         /// <param name="chartKey"></param>
         /// <returns></returns>
         public void Archive(string secretKey, string chartKey)
@@ -126,8 +129,8 @@
         /// <summary>
         /// Get the chart from the archive (makes it active)
         /// POST https://app.seats.io/api/chart/<secretKey>/<chartKey>/unarchive
-        /// http://www.seats.io/docs/api#api-reference-charts-unarchive-a-chart
         /// </summary>
+        /// <see cref="http://www.seats.io/docs/api#api-reference-charts-unarchive-a-chart"/>
         /// <param name="chartKey"></param>
         /// <returns></returns>
         public void UnArchive(string secretKey, string chartKey)
@@ -140,8 +143,8 @@
         /// <summary>
         /// Copies the chart and creates a new one with a new chartKey.
         /// POST https://app.seats.io/api/chart/copy
-        /// http://www.seats.io/docs/api#api-reference-charts-copy-a-chart
         /// </summary>
+        /// <see cref="http://www.seats.io/docs/api#api-reference-charts-copy-a-chart"/>
         /// <returns></returns>
         public string Copy(string secretKey, string chartKey, string chartName)
         {

@@ -13,6 +13,7 @@
         /// <summary>
         /// POST https://app.seats.io/api/createUser
         /// </summary>
+        /// <see cref="http://www.seats.io/docs/api#api-reference-users-creating-users"/>
         public UserData CreateUser(string secretKey)
         {
             Connect connect = new Connect();

@@ -8,6 +8,9 @@ using System.Web.Script.Serialization;
 
 namespace PinEvents.SeatsIo.Service
 {
+    /// <summary>
+    /// Json Report service API.
+    /// </summary>
     public class ReportService
     {
         private string endPoint;

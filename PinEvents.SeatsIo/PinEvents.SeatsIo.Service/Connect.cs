@@ -9,9 +9,9 @@
 
     using Newtonsoft.Json.Linq;
     using PinEvents.SeatsIo.Data;
-
+    using Service;
     /// <summary>
-    /// Connect to the api.
+    /// Connect to the API.
     /// </summary>
     class Connect
     {

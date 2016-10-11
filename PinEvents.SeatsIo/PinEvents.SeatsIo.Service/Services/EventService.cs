@@ -10,7 +10,7 @@
     using PinEvents.SeatsIo.Exceptions;
     
     /// <summary>
-    /// The Seats.io Event service.
+    /// Json Event service API.
     /// </summary>
     public class EventService
     {

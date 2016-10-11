@@ -9,6 +9,9 @@
     using PinEvents.SeatsIo;
     using PinEvents.SeatsIo.Data;
 
+    /// <summary>
+    /// Json Booking service API.
+    /// </summary>
     public class BookingService
     {
         private string endPoint;
