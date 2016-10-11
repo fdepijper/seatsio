@@ -10,6 +10,9 @@
     using Newtonsoft.Json.Linq;
     using PinEvents.SeatsIo.Data;
 
+    /// <summary>
+    /// Connect to the api.
+    /// </summary>
     class Connect
     {
         public string Version;
