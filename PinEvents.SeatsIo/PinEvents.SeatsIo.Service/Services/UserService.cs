@@ -14,12 +14,12 @@
         /// POST https://app.seats.io/api/createUser
         /// </summary>
         /// <see cref="http://www.seats.io/docs/api#api-reference-users-creating-users"/>
-        public UserData CreateUser(string secretKey)
+        public UserData CreateUser(string secretMasterKey)
         {
             Connect connect = new Connect();
             Method = Connect.Methods.POST;
             endPoint = "api/createUser";
-            var data = new { secretKey = secretKey };
+            var data = new { secretKey = secretMasterKey };
             var jdata = JObject.FromObject(data);
             connect.Request(Method, endPoint, jdata);
 
