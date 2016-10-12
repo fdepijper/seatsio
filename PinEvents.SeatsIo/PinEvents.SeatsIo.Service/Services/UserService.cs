@@ -19,7 +19,7 @@
             Connect connect = new Connect();
             Method = Connect.Methods.POST;
             endPoint = "api/createUser";
-            var data = new { secretKey = "9d994af1-89ba-4b62-9997-e989cb9049c9" };
+            var data = new { secretKey = secretKey };
             var jdata = JObject.FromObject(data);
             connect.Request(Method, endPoint, jdata);
 
