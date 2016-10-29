@@ -132,7 +132,7 @@
         public List<string> Order(BookingData booking)
         {
             Connect connect = new Connect();
-            endPoint = String.Format("api/event/{0}/orders/{1}/{2}",booking.EventKey, booking.orderId, booking.secretKey);
+            endPoint = String.Format("api/event/{0}/orders/{1}/{2}",booking.eventKey, booking.orderId, booking.secretKey);
             connect.Request(Connect.Methods.GET, endPoint, null);
             var reservationToken = connect.Data;
             var json = connect.Data;

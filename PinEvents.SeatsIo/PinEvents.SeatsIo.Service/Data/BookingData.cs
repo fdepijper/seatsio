@@ -9,7 +9,7 @@ namespace PinEvents.SeatsIo.Data
     public class BookingData
     {
         public long? EventId { get; set; }
-        public string EventKey { get; set; }
+        public string eventKey { get; set; }
         public string secretKey { get; set; }
         public string reservationToken { get; set; }
         public string orderId { get; set; }
